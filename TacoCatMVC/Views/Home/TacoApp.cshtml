@@ -1,0 +1,35 @@
+﻿@model TacoCatMVC.Models.TacoAppModel
+
+
+
+<div class="container mt-5">
+    <form class="row" asp-action="TacoApp" asp-controller="Home">
+        <div class="col">
+            <!-- ----------------------------------------------------------- INSTRUCTIONS --------------------- -->
+            <h2>LOOK! IT'S THE TACO cat!</h2>
+            <h4 class="lead">
+                This project is to verify if the input is a palindrome or not.  Input your
+                string and it will determine if it is the same forward and backwards.  Thanks for playing!
+            </h4>
+        </div>
+        <div class="col">
+            <!-- ------------------------------------------------------- MAIN APP UI -------------------- -->
+            <h2>IS IT A Palindrome?  Enter Below...</h2>
+            <form class="row g-2" asp-action="TacoApp" asp-controller="Home" method="post">
+                <div class="col">
+                    <input id="theInput" placeholder="Enter here" class="form-control" value="@Model?.UserInput" asp-for="UserInput">
+                </div>
+                <div class="col-12 d-flex justify-content-start justify-content-md-end mt-2">
+                    <button id="thisButton" type="submit" class="btn btn-primary">click this</button>
+                </div>
+            </form>           <!------------------------------------ d-none fade show / were removed from below ----------->
+            <div class="alert mt-5" id="alert" role="alert">
+                <h4 id="alertHeader" class="alert-heading">@Model?.Message</h4>
+                <p class="mb-0" id="msg">
+                    <!-- ------------------------------------------------------ CONTENT GOES HERE -------------------->
+
+                </p>
+            </div>
+        </div>
+    </form>
+</div>
